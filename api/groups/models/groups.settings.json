@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "name": "groups"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "groups_exams_id"
+    },
+    "pathologie_id": {
+      "model": "pathologies",
+      "via": "groups_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "exams": {
+      "collection": "exams",
+      "via": "group_id"
+    }
+  }
+}

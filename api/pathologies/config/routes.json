@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pathologies",
+      "handler": "pathologies.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pathologies/count",
+      "handler": "pathologies.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pathologies/:id",
+      "handler": "pathologies.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pathologies",
+      "handler": "pathologies.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pathologies/:id",
+      "handler": "pathologies.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pathologies/:id",
+      "handler": "pathologies.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

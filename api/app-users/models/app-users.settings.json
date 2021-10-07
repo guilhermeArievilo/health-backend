@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_users",
+  "info": {
+    "name": "appUsers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "alias": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string",
+      "unique": true
+    },
+    "username": {
+      "type": "string",
+      "unique": true,
+      "required": false
+    },
+    "password": {
+      "type": "string",
+      "private": true,
+      "required": true,
+      "unique": false
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "contacts": {
+      "via": "user_id",
+      "collection": "contacts"
+    }
+  }
+}

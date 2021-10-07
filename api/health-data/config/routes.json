@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health-data",
+      "handler": "health-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/health-data/count",
+      "handler": "health-data.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/health-data/:id",
+      "handler": "health-data.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/health-data",
+      "handler": "health-data.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/health-data/:id",
+      "handler": "health-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/health-data/:id",
+      "handler": "health-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

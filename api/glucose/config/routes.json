@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/glucoses",
+      "handler": "glucose.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/glucoses/count",
+      "handler": "glucose.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/glucoses/:id",
+      "handler": "glucose.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/glucoses",
+      "handler": "glucose.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/glucoses/:id",
+      "handler": "glucose.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/glucoses/:id",
+      "handler": "glucose.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

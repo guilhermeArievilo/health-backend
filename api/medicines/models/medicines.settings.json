@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicines",
+  "info": {
+    "name": "medicines"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pathologies_id": {
+      "collection": "pathologies",
+      "via": "medicines_id",
+      "dominant": true
+    },
+    "health_id": {
+      "model": "health-data",
+      "via": "medicines_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "guidance": {
+      "type": "richtext"
+    }
+  }
+}

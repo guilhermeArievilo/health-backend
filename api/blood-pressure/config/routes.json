@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/blood-pressures",
+      "handler": "blood-pressure.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/blood-pressures/count",
+      "handler": "blood-pressure.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/blood-pressures/:id",
+      "handler": "blood-pressure.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/blood-pressures",
+      "handler": "blood-pressure.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/blood-pressures/:id",
+      "handler": "blood-pressure.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/blood-pressures/:id",
+      "handler": "blood-pressure.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

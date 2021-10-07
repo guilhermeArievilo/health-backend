@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "contacts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "via": "contacts",
+      "model": "app-users"
+    },
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "biginteger"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "glucoses",
+  "info": {
+    "name": "glucose",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "glucoses_id"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "health_data",
+  "info": {
+    "name": "healthData"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "model": "app-users"
+    },
+    "bleedType": {
+      "type": "string"
+    },
+    "height": {
+      "type": "decimal"
+    },
+    "diabetes": {
+      "type": "string"
+    },
+    "pahtologies_id": {
+      "via": "health_id",
+      "collection": "pathologies"
+    },
+    "bloodPressure_id": {
+      "via": "health_id",
+      "collection": "blood-pressure"
+    },
+    "allergies_id": {
+      "via": "health_id",
+      "collection": "allergies"
+    },
+    "medicines_id": {
+      "via": "health_id",
+      "collection": "medicines"
+    },
+    "exams": {
+      "via": "health_id",
+      "collection": "exams"
+    },
+    "groups_exams_id": {
+      "via": "health_id",
+      "collection": "groups"
+    },
+    "vaccines_id": {
+      "via": "health_id",
+      "collection": "vaccines"
+    },
+    "weights_id": {
+      "via": "health_id",
+      "collection": "weight"
+    },
+    "glucoses_id": {
+      "via": "health_id",
+      "collection": "glucose"
+    }
+  }
+}

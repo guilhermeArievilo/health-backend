@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pathologies",
+  "info": {
+    "name": "pathologies"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "pahtologies_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "obs": {
+      "type": "richtext"
+    },
+    "medicines_id": {
+      "via": "pathologies_id",
+      "collection": "medicines"
+    },
+    "exams_id": {
+      "via": "pathologie_id",
+      "collection": "exams"
+    },
+    "groups_id": {
+      "via": "pathologie_id",
+      "collection": "groups"
+    }
+  }
+}

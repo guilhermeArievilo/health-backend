@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exams",
+  "info": {
+    "name": "exams"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "exams"
+    },
+    "pathologie_id": {
+      "model": "pathologies",
+      "via": "exams_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "date": {
+      "type": "date"
+    },
+    "group_id": {
+      "via": "exams",
+      "model": "groups"
+    }
+  }
+}

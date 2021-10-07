@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/app-users",
+      "handler": "app-users.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app-users/count",
+      "handler": "app-users.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app-users/:id",
+      "handler": "app-users.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app-users/fetch-user",
+      "handler": "app-users.fetchUser",
+      "config": {
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app-users/login-user",
+      "handler": "app-users.login",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app-users/register-user",
+      "handler": "app-users.register",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app-users",
+      "handler": "app-users.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/app-users/:id",
+      "handler": "app-users.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/app-users/:id",
+      "handler": "app-users.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

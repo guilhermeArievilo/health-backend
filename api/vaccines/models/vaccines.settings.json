@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vaccines",
+  "info": {
+    "name": "vaccines",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "vaccines_id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "doses": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vaccines.doses"
+    }
+  }
+}

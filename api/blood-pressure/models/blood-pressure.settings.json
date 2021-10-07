@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blood_pressures",
+  "info": {
+    "name": "bloodPressure",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "bloodPressure_id"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

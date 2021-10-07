@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "allergies",
+  "info": {
+    "name": "allergies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "health_id": {
+      "model": "health-data",
+      "via": "allergies_id"
+    }
+  }
+}

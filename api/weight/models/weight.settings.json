@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weights",
+  "info": {
+    "name": "weight",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "health_id": {
+      "model": "health-data",
+      "via": "weights_id"
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

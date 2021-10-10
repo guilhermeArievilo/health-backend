@@ -58,10 +58,10 @@
     },
     {
       "method": "PUT",
-      "path": "/app-users/:id",
+      "path": "/app-users/",
       "handler": "app-users.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

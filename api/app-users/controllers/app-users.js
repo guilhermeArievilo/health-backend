@@ -56,6 +56,28 @@ module.exports = {
     return data[0]
   },
 
+  async update (ctx) {
+    const { user_id, fields } = ctx.request.body
+    console.log(fields)
+    try {
+      const user = await strapi.query('app-users').model.findOneAndUpdate({ _id: user_id }, fields, {
+        new: true
+      })
+
+      if (!user) {
+        ctx.response.status = 400
+        ctx.response.message = 'User not found'
+        return
+      }
+      user.password = undefined
+      return user
+    } catch (err) {
+      console.error(err.message)
+      ctx.response.status = 400
+      ctx.response.message = 'Update failed'
+    }
+  },
+
   async login (ctx) {
     const { identifier, password } = ctx.request.body
     // const [hashType, hash64] = ctx.request.headers.authorization
@@ -85,7 +107,11 @@ module.exports = {
       
       const token = jwt.sign({ user: user._id })
       return {
-        user: user,
+        user: {
+          email: user.email,
+          alias: user.alias,
+          _id: user._id
+        },
         jwt: token
       }
     } catch (err) {

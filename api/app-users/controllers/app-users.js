@@ -58,7 +58,6 @@ module.exports = {
 
   async update (ctx) {
     const { user_id, fields } = ctx.request.body
-    console.log(fields)
     try {
       const user = await strapi.query('app-users').model.findOneAndUpdate({ _id: user_id }, fields, {
         new: true
@@ -129,7 +128,6 @@ module.exports = {
         ctx.response.message = 'User already exist'
       }
 
-      console.log(ctx.request.body)
       const hash = await bcrypt.hash(password, 10)
       ctx.request.body.password = hash
 

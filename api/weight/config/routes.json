@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/weights/last-value",
+      "handler": "weight.lastValue",
+      "config": {
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "GET",
       "path": "/weights/:id",
       "handler": "weight.findOne",
       "config": {

@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/health-data/find-health",
+      "handler": "health-data.findHealth",
+      "config": {
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "GET",
       "path": "/health-data/:id",
       "handler": "health-data.findOne",
       "config": {

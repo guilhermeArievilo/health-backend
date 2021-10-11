@@ -5,7 +5,7 @@
       "path": "/pathologies",
       "handler": "pathologies.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

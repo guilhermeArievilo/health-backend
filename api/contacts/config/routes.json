@@ -5,7 +5,7 @@
       "path": "/contacts",
       "handler": "contacts.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

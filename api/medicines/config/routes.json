@@ -5,7 +5,7 @@
       "path": "/medicines",
       "handler": "medicines.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

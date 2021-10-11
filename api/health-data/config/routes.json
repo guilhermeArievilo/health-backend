@@ -42,10 +42,10 @@
     },
     {
       "method": "PUT",
-      "path": "/health-data/:id",
+      "path": "/health-data",
       "handler": "health-data.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

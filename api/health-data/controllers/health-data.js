@@ -26,5 +26,26 @@ module.exports = {
       ctx.response.status = 400
       ctx.response.message = 'last value find failed'
     }
-  } 
+  },
+
+  async update (ctx) {
+    const { user_id, fields } = ctx.request.body
+    try {
+      const user = await strapi.query('health-data').model.findOneAndUpdate({ user_id }, fields, {
+        new: true
+      })
+
+      if (!user) {
+        ctx.response.status = 400
+        ctx.response.message = 'User not found'
+        return
+      }
+      user.password = undefined
+      return user
+    } catch (err) {
+      console.error(err.message)
+      ctx.response.status = 400
+      ctx.response.message = 'Update failed'
+    }
+  }
 };

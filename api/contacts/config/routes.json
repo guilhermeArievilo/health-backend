@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/contact",
+      "handler": "contacts.findOne",
+      "config": {
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "GET",
       "path": "/contacts/:id",
       "handler": "contacts.findOne",
       "config": {
@@ -34,10 +42,10 @@
     },
     {
       "method": "PUT",
-      "path": "/contacts/:id",
+      "path": "/contacts",
       "handler": "contacts.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

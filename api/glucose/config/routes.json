@@ -5,7 +5,7 @@
       "path": "/glucoses",
       "handler": "glucose.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

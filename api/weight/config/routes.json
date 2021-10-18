@@ -37,7 +37,7 @@
       "path": "/weights",
       "handler": "weight.create",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

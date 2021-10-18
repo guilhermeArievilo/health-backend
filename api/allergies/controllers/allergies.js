@@ -17,6 +17,9 @@ module.exports = {
     
     try {
       const value = await strapi.query('allergies').model.find({
+        published_at: {
+          $ne: null
+        },
         health_id: ObjectId(health_id)
       })
         .limit(Number(limit))
@@ -27,5 +30,29 @@ module.exports = {
       ctx.response.status = 400
       ctx.response.message = 'find allergies failed'
     }
-  }
+  },
+
+  async update (ctx) {
+    const { health_id, fields } = ctx.request.body
+    try {
+      const contact = await strapi.query('allergies').model.findOneAndUpdate({
+        health_id: ObjectId(health_id),
+        _id: ObjectId(fields._id)
+      }, fields, {
+        new: true
+      })
+
+      if (!contact) {
+        ctx.response.status = 400
+        ctx.response.message = 'allergy not found'
+        return
+      }
+
+      return contact
+    } catch (err) {
+      console.error(err.message)
+      ctx.response.status = 400
+      ctx.response.message = 'Update failed'
+    }
+  },
 };

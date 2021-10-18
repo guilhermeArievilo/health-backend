@@ -34,10 +34,10 @@
     },
     {
       "method": "PUT",
-      "path": "/allergies/:id",
+      "path": "/allergies",
       "handler": "allergies.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

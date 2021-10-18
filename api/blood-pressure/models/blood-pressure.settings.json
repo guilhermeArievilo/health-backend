@@ -21,6 +21,9 @@
     },
     "date": {
       "type": "date"
+    },
+    "racionalValue": {
+      "type": "string"
     }
   }
 }

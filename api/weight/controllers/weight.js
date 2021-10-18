@@ -20,7 +20,7 @@ module.exports = {
         health_id: ObjectId(health_id)
       })
         .sort({
-          date: 1
+          date: -1
         })
 
       return value
@@ -29,6 +29,30 @@ module.exports = {
       ctx.response.status = 400
       ctx.response.message = 'last value find failed'
     }
-  } 
+  },
 
+  async find (ctx) {
+    const { health_id, limit } = ctx.request.query
+    if (!health_id) return
+    // `ObjectId` can throw https://github.com/mongodb/js-bson/blob/0.5/lib/bson/objectid.js#L22-L51, it's better anyway to sanitize the string first
+    if (!ObjectId.isValid(health_id)) {
+      return Promise.reject(new TypeError(`Invalid id: ${health_id}`));
+    }
+    
+    try {
+      const value = await strapi.query('weight').model.find({
+        health_id: ObjectId(health_id)
+      })
+        .sort({
+          date: 1
+        })
+        .limit(Number(limit))
+
+      return value
+    } catch (err) {
+      console.error(err.message)
+      ctx.response.status = 400
+      ctx.response.message = 'find weights failed'
+    }
+  }
 };

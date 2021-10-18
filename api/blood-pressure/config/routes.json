@@ -5,7 +5,7 @@
       "path": "/blood-pressures",
       "handler": "blood-pressure.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -37,7 +37,7 @@
       "path": "/blood-pressures",
       "handler": "blood-pressure.create",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -45,7 +45,7 @@
       "path": "/blood-pressures/:id",
       "handler": "blood-pressure.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

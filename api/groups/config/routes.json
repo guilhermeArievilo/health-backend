@@ -5,7 +5,7 @@
       "path": "/groups",
       "handler": "groups.find",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -18,10 +18,10 @@
     },
     {
       "method": "GET",
-      "path": "/groups/:id",
+      "path": "/group",
       "handler": "groups.findOne",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -34,10 +34,10 @@
     },
     {
       "method": "PUT",
-      "path": "/groups/:id",
+      "path": "/group",
       "handler": "groups.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

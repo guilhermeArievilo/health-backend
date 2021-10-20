@@ -18,10 +18,10 @@
     },
     {
       "method": "GET",
-      "path": "/medicines/:id",
+      "path": "/medicine",
       "handler": "medicines.findOne",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -29,15 +29,15 @@
       "path": "/medicines",
       "handler": "medicines.create",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
       "method": "PUT",
-      "path": "/medicines/:id",
+      "path": "/medicine",
       "handler": "medicines.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

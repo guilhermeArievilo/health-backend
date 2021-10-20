@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/pathologies/pop",
+      "handler": "pathologies.findByAggregate",
+      "config": {
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "GET",
       "path": "/pathologies/count",
       "handler": "pathologies.count",
       "config": {
@@ -18,10 +26,10 @@
     },
     {
       "method": "GET",
-      "path": "/pathologies/:id",
+      "path": "/pathology",
       "handler": "pathologies.findOne",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -29,15 +37,15 @@
       "path": "/pathologies",
       "handler": "pathologies.create",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
       "method": "PUT",
-      "path": "/pathologies/:id",
+      "path": "/pathology",
       "handler": "pathologies.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

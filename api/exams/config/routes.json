@@ -18,10 +18,10 @@
     },
     {
       "method": "GET",
-      "path": "/exams/:id",
+      "path": "/exam",
       "handler": "exams.findOne",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -34,10 +34,10 @@
     },
     {
       "method": "PUT",
-      "path": "/exams/:id",
+      "path": "/exam",
       "handler": "exams.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {

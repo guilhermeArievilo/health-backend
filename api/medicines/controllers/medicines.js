@@ -16,7 +16,10 @@ module.exports = {
     
     try {
       const value = await strapi.query('medicines').model.find({
-        health_id: ObjectId(health_id)
+        health_id: ObjectId(health_id),
+        published_at: {
+          $ne: null
+        }
       })
         .limit(Number(limit))
 

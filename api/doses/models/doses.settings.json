@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "vaccines",
+  "collectionName": "doses",
   "info": {
-    "name": "vaccines",
-    "description": ""
+    "name": "doses"
   },
   "options": {
     "increments": true,
@@ -12,15 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "health_id": {
-      "model": "health-data",
-      "via": "vaccines_id"
+    "date": {
+      "type": "date"
     },
-    "name": {
+    "batch": {
       "type": "string"
     },
-    "doses": {
-      "collection": "doses"
+    "type": {
+      "type": "string"
     }
   }
 }

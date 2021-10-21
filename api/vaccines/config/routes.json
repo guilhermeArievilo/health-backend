@@ -18,10 +18,10 @@
     },
     {
       "method": "GET",
-      "path": "/vaccines/:id",
+      "path": "/vaccine",
       "handler": "vaccines.findOne",
       "config": {
-        "policies": []
+        "policies": ["auth"]
       }
     },
     {
@@ -29,15 +29,31 @@
       "path": "/vaccines",
       "handler": "vaccines.create",
       "config": {
-        "policies": []
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vaccines/doses",
+      "handler": "vaccines.createDose",
+      "config": {
+        "policies": ["auth"]
       }
     },
     {
       "method": "PUT",
-      "path": "/vaccines/:id",
+      "path": "/vaccine",
       "handler": "vaccines.update",
       "config": {
-        "policies": []
+        "policies": ["auth"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vaccine/dose",
+      "handler": "vaccines.updateDoses",
+      "config": {
+        "policies": ["auth"]
       }
     },
     {

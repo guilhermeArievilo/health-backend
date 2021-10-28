@@ -33,7 +33,7 @@ module.exports = {
               {
                 $match: {
                   $expr: {
-                    $eq: ["$pathologie_id", "$$group_id"]
+                    $eq: ["$group_id", "$$group_id"]
                   },
                   published_at: {
                     $ne: null
@@ -50,7 +50,7 @@ module.exports = {
           $limit: Number(limit)
         })
       }
-      const data = await strapi.query('exams').model
+      const data = await strapi.query('groups').model
         .aggregate(pipeline)
         .allowDiskUse(true)
 
@@ -58,7 +58,7 @@ module.exports = {
     } catch (err) {
       console.error(err.message)
       ctx.response.status = 400
-      ctx.response.message = 'find exams failed'
+      ctx.response.message = 'find groups failed'
     }
   },
 

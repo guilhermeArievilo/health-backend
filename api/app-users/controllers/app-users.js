@@ -121,21 +121,42 @@ module.exports = {
   },
 
   async register (ctx) {
-    const { email, password } = ctx.request.body
+    const { email, password, fields, healthData, weight } = ctx.request.body
     try {
       if (await strapi.query('app-users').model.findOne({ email })) {
         ctx.response.status = 400
-        ctx.response.message = 'User already exist'
+        ctx.response.message = 'Usuário já existe !'
       }
 
       const hash = await bcrypt.hash(password, 10)
-      ctx.request.body.password = hash
+      // ctx.request.body.password = hash
+
+      const userToken = fields.alias + '#' + Math.floor(Math.random() * 65536).toString().slice(0, 4)
 
       const user = await strapi.query('app-users').model.create({
-        ...ctx.request.body,
+        email,
+        password: hash,
+        token: userToken,
+        ...fields,
         published_at: new Date().toString()
       })
-      
+
+      if (user && healthData) {
+        const health = await strapi.query('health-data').model.create({
+          ...healthData,
+          user_id: user._id,
+          published_at: new Date().toString()
+        })
+
+        if (health && weight) {
+          await strapi.query('weight').model.create({
+            health_id: health._id,
+            value: weight,
+            published_at: new Date().toString()
+          })
+        }
+      }
+
       const token = jwt.sign({ user: user._id })
       user.password = undefined
       return {

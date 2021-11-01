@@ -19,11 +19,6 @@
       "type": "string",
       "unique": true
     },
-    "username": {
-      "type": "string",
-      "unique": true,
-      "required": false
-    },
     "password": {
       "type": "string",
       "private": true,
